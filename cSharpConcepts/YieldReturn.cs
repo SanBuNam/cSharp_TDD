@@ -63,7 +63,9 @@ namespace cSharpConcepts
         }
         // The first call to Integers() returns 1. The second call returns 2 and the line yield return 1 is not executed again.
         // The nice things about using yield return is that it's a very quick way of implementing the iterator pattern, so things are evaluated lazly.
-
+        // Yield has two great uses,
+        // 1. It helps to provide custom iteration without creating temp collections.
+        // 2. It helps to do stateful iteration.
     }
 
 }
