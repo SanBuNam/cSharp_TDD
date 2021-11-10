@@ -233,6 +233,7 @@ namespace DataStructures.Lists
             _collection[_size++] = dataItem;
         }
 
+
         /// <summary>
         /// Adds an enumerable collection of items to list.
         /// </summary>
@@ -276,10 +277,225 @@ namespace DataStructures.Lists
         }
 
 
+        /// <summary>
+        /// Inserts a new element at an index. Doesn't override the cell at index.
+        /// </summary>
+        /// <param name="dataItem">Data item to insert.</param>
+        /// <param name="index">Index of insertion.</param>
+        public void InsertAt(T dataItem, int index)
+        {
+            if (index < 0 || index > _size)
+            {
+                throw new IndexOutOfRangeException("Please provide a valid index.");
+            }
+
+            // If the inner array is full and there are no extra spaces,
+            // ... then maximize it's capacity to a minimum of _size + 1.
+            if (_size == _collection.Length)
+            {
+                _ensureCapacity(_size + 1);
+            }
+
+            // If the index is not "at the end", then copy the elements of the array
+            // ... between the specified index and the last index to the new range (index +1, _size);
+            // The call at "index" will become available.
+            if (index < _size)
+            {
+                Array.Copy(_collection, index, _collection, index + 1, (_size - index));
+            }
+
+            // Write the dataItem to the available cell.
+            _collection[index] = dataItem;
+
+            // Increase the size.
+            _size++;
+        }
+
+
+        /// <summary>
+        /// Removes the specified dataItem from list.
+        /// </summary>
+        /// <returns>>True if removed successfully, false otherwise.</returns>
+        /// <param name="dataItem">Data item.</param>
+        public bool Remove(T dataItem)
+        {
+            int index = IndexOf(dataItem);
+
+            if (index >= 0)
+            {
+                RemoveAt(index);
+                return true;
+            }
+
+            return false;
+        }
+
+
+        /// <summary>
+        /// Removes the list element at the specified index.
+        /// </summary>
+        /// <param name="index">Index of element.</param>
+        public void RemoveAt(int index)
+        {
+            if (index < 0 || index >= _size)
+            {
+                throw new IndexOutOfRangeException("Please pass a valid index.");
+            }
+
+            // Decrease the size by 1, to avoid doing Array. Copy if the element is to be removed from the tail of list.
+            _size--;
+
+            // If the index is still less than size, perform an Array.Copy to override the cell at index.
+            // This operation is O(N), where N = size - index.
+            if (index < _size)
+            {
+                Array.Copy(_collection, index + 1, _collection, index, (_size - index));
+            }
+
+            // Reset the writable cell to the default value of type T.
+            _collection[_size] = default(T);
+        }
+
+
+        /// <summary>
+        /// Clear this instance.
+        /// </summary>
+        public void Clear()
+        {
+            if (_size > 0)
+            {
+                _size = 0;
+                Array.Clear(_collection, 0, _size);
+                _collection = _emptyArray;
+            }
+        }
+
+        /// <summary>
+        /// Resize the List to a new size.
+        /// </summary>
+        public void Resize(int newSize)
+        {
+            Resize(newSize, default(T));
+        }
+
+        /// <summary>
+        /// Resize the list to a new size.
+        /// </summary>
+        public void Resize(int newSize, T defaultValue)
+        {
+            int currentSize = this.Count;
+
+            if (newSize < currentSize)
+            {
+                this._ensureCapacity(newSize);
+            }
+            else if (newSize > currentSize)
+            {
+                // Optimisation step.
+                // This is just to avoid multiple automatic capacity changes.
+                if (newSize > this._collection.Length)
+                    this._ensureCapacity(newSize + 1);
+
+                this.AddRange(Enumerable.Repeat<T>(defaultValue, newSize - currentSize));
+            }
+        }
+
+        /// <summary>
+        /// Reverses this list.
+        /// </summary>
+        public void Reverse()
+        {
+            Reverse(0, _size);
+        }
+
+        /// <summary>
+        /// Reverses the order of a number of elements. Starting a specific index.
+        /// </summary>
+        /// <param name="startIndex">Start index.</param>
+        /// <param name="count">Count of elements to reverse.</param>
+        public void Reverse(int startIndex, int count)
+        {
+            // Handle the bounds of startIndex
+            if (startIndex < 0 || startIndex >= _size)
+            {
+                throw new IndexOutOfRangeException("Please pass a valid starting index.");
+            }
+
+            // Handle the bounds of count and startIndex with respect to _size.
+            if (count < 0 || startIndex > (_size - count))
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            // Use Array.Reverse
+            // Running complexity is better than O(N). But unknow.
+            // Array.Reverse uses the closed-source function TrySZReverse.
+            Array.Reverse(_collection, startIndex, count);
+        }
+
+        /// <summary>
+        /// For each element in list, apply the specified action to it.
+        /// </summary>
+        /// <param name="action">Typed Action.</param>
+        public void ForEach(Action<T> action)
+        {
+            // Null actions are not allowed.
+            if (action == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            for (int i = 0; i < _size; ++i)
+            {
+                action(_collection[i]);
+            }
+        }
+
+        /// <summary>
+        /// Checks whether the list contains the specified dataItem.
+        /// </summary>
+        /// <returns>True if list contains the dataItem, false otherwise.</returns>
+        /// <param name="dataItem">Data item.</param>
+        public bool Contains(T dataItem)
+        {
+            // Null-value check
+            if ((Object)dataItem == null)
+            {
+                for (int i = 0; i < _size; ++i)
+                {
+                    if ((Object)_collection[i] == null) return true;
+                }
+            }
+            else
+            {
+                // Construct a default equality comparer for this Type T
+                // Use it to get the equal match for the dataItem
+                EqualityComparer<T> comparer = EqualityComparer<T>.Default;
+
+                for (int i = 0; i < _size; ++i)
+                {
+                    if (comparer.Equals(_collection[i], dataItem)) return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Checks whether the list contains the specified dataItem.
+        /// </summary>
+        /// <returns>True if list contains the dataItem, false otherwise.</returns>
+        /// <param name="dataItem">Data item.</param>
+        /// <param name="comparer">The Equality Comparer object.</param>
+       
+
+
+
+
+
+
 
     }
-
-
 }
 
 /*
