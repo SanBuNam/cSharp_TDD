@@ -81,7 +81,6 @@ namespace cSharpConcepts
         /* The throw expression */
         // Starting with C# 7.0 throw can be used as an expression as well as a statement.
         // This allows an exception to be thrown in contexts that were previously unsupported.
-
         // the conditional operator. The following examples uses a throw expression to throw an ArgumentException if a method is passed an empty string array.
         // Before C# 7.0 this logic would need to appear in an if/else statement.
         private static void DisplayFirstNumber(string[] args)

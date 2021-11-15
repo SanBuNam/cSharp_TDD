@@ -6,6 +6,7 @@ namespace cSharpConcepts
 {
     struct Point
     {
+        // http://www.albahari.com/valuevsreftypes.aspx
         // Put simply, Structs are cut-down classes. Imagine classes that don't support inheritance or finalizers, and you have cut-down version: the struct.
         // structs are defined in the same way as classes (except with the struct keyword), structs can have the same rich members, including fields, methods, properties and operators.
         private int x, y; // private fields
