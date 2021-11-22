@@ -487,7 +487,32 @@ namespace DataStructures.Lists
         /// <returns>True if list contains the dataItem, false otherwise.</returns>
         /// <param name="dataItem">Data item.</param>
         /// <param name="comparer">The Equality Comparer object.</param>
-       
+       public bool Contains(T dataItem, IEqualityComparer<T> comparer)
+       {
+            // Null comparers are not allowed.
+            if (comparer == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            // Null-value check
+            if ((Object)dataItem == null)
+            {
+                for (int i=0; i < _size; ++i)
+                {
+                    if ((Object)_collection[i] == null) return true;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < _size; ++i)
+                {
+                    if (comparer.Equals(_collection[i], dataItem)) return true;
+                }
+            }
+
+            return false;
+       }
 
 
 
