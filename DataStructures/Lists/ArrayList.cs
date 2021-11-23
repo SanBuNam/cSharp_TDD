@@ -514,12 +514,292 @@ namespace DataStructures.Lists
             return false;
        }
 
+        /// <summary>
+        /// Checks whether an item specified via a Predicate<T> function exists exists in list.
+        /// </summary>
+        /// <param name="searchMatch">Match predicate.</param>
+        public bool Exists(Predicate<T> searchMatch)
+        {
+            // Use the FindIndex to look through the collection
+            // If the returned index != -1 then it does exist, otherwise it doesn't.
+            return (FindIndex(searchMatch) != -1);
+        }
+
+        /// <summary>
+        /// Finds the index of the element that matches the predicate.
+        /// </summary>
+        /// <returns>The index of element if found, -1 otherwise.</returns>
+        /// <param name="searchMatch">Match predicate.</param>
+        public int FindIndex(Predicate<T> searchMatch)
+        {
+            return FindIndex(0, _size, searchMatch);
+        }
+
+        /// <summary>
+        /// Finds the index of the element that matches the predicate.
+        /// </summary>
+        /// <returns>The index of the element if found, -1 otherwise.</returns>
+        /// <param name="startIndex">Starting index to search from.</param>
+        /// <param name="searchMatch">Match predicate.</param>
+        public int FindIndex(int startIndex, Predicate<T> searchMatch)
+        {
+            return FindIndex(startIndex, (_size - startIndex), searchMatch);
+        }
+
+        /// <summary>
+        /// Finds the index of the first element that matches the given predicate function.
+        /// </summary>
+        /// <returns>The index of element if found, -1 if not found.</returns>
+        /// <param name="startIndex">Starting index of search.</param>
+        /// <param name="count">Count of elements to search through.</param>
+        /// <param name="searchMatch">Match predicate function.</param>
+        public int FindIndex(int startIndex, int count, Predicate<T> searchMatch)
+        {
+            // Check bound of startIndex
+            if (startIndex < 0 || startIndex > _size)
+            {
+                throw new IndexOutOfRangeException("Please pass a valid starting index.");
+            }
+
+            // CHeck the bounds of count and startIndex with respect to _size
+            if (count < 0 || startIndex > (_size - count))
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            // Null match-predicates are not allowed
+            if (searchMatch == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            // Start the search
+            int endIndex = startIndex + count;
+            for (int index = startIndex; index < endIndex; ++index)
+            {
+                if (searchMatch(_collection[index]) == true) return index;
+            }
+
+            // Not found, return -1
+            return -1;
+        }
+
+        /// <summary>
+        /// Returns the index of a given dataItem.
+        /// </summary>
+        /// <returns>Index of element in list.</returns>
+        /// <param name="dataItem">Data item.</param>
+        public int IndexOf(T dataItem)
+        {
+            return IndexOf(dataItem, 0, _size);
+        }
+
+        /// <summary>
+        /// Returns the index of a given dataItem.
+        /// </summary>
+        /// <returns>Index of element in list.</returns>
+        /// <param name="dataItem">Data item.</param>
+        /// <param name="startIndex">The starting index to search from.</param>
+        public int IndexOf(T dataItem, int startIndex)
+        {
+            return IndexOf(dataItem, startIndex, _size);
+        }
+
+        /// <summary>
+        /// Returns the index of a given dataItem.
+        /// </summary>
+        /// <returns>Index of element in list.</returns>
+        /// <param name="dataItem">Data item.</param>
+        /// <param name="startIndex">The starting index to search from.</param>
+        /// <param name="count">Count of elements to search through.</param>
+        public int IndexOf(T dataItem, int startIndex, int count)
+        {
+            // Check the bound of the starting index.
+            if (startIndex < 0 || (uint)startIndex > (uint)_size)
+            {
+                throw new IndexOutOfRangeException("Please pass a valid starting index.");
+            }
+
+            // Check the bounds of count and starting index with respect to _size.
+            if (count < 0 || startIndex > (_size - count))
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            // Everything is cool, start looking for the index
+            // Use the Array.IndexOf
+            // Array.IndexOf has a O(n) running time complexity, where: "n = count - size".
+            // Array.IndexOf uses EqualityComparer<T>.Default to return the index of element which loops
+            // ... over all the elements in the range [startIndex,count) in the array.
+            return Array.IndexOf(_collection, dataItem, startIndex, count);
+        }
 
 
+        /// <summary>
+        /// Find the specified element that matches the Search Predication.
+        /// </summary>
+        /// <param name="searchMatch">Match predicate.</param>
+        public T Find(Predicate<T> searchMatch)
+        {
+            // Null Predicate functions are not allowed. 
+            if (searchMatch == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            // Begin searching, and return the matched element
+            for (int i = 0; i < _size; ++i)
+            {
+                if (searchMatch(_collection[i]))
+                {
+                    return _collection[i];
+                }
+            }
+
+            // Not found, return the default value of the type T.
+            return default(T);
+        }
 
 
+        /// <summary>
+        /// Finds all the elements that match the typed Search Predicate.
+        /// </summary>
+        /// <returns>ArrayList<T> of matched elements. Empty list is returned if not element was found.</returns>
+        /// <param name="searchMatch">Match predicate.</param>
+        public ArrayList<T> FindAll(Predicate<T> searchMatch)
+        {
+            // Null Predicate functions are not allowed. 
+            if (searchMatch == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            ArrayList<T> matchedElements = new ArrayList<T>();
+
+            // Begin searching, and add the matched elements to the new list.
+            for (int i = 0; i < _size; ++i)
+            {
+                if (searchMatch(_collection[i]))
+                {
+                    matchedElements.Add(_collection[i]);
+                }
+            }
+
+            // Return the new list of elements.
+            return matchedElements;
+        }
 
 
+        /// <summary>
+        /// Get a range of elements, starting from an index..
+        /// </summary>
+        /// <returns>The range as ArrayList<T>.</returns>
+        /// <param name="startIndex">Start index to get range from.</param>
+        /// <param name="count">Count of elements.</param>
+        public ArrayList<T> GetRange(int startIndex, int count)
+        {
+            // Handle the bound errors of startIndex
+            if (startIndex < 0 || (uint)startIndex > (uint)_size)
+            {
+                throw new IndexOutOfRangeException("Please provide a valid starting index.");
+            }
+
+            // Handle the bound errors of count and startIndex with respect to _size
+            if (count < 0 || startIndex > (_size - count))
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            var newArrayList = new ArrayList<T>(count);
+
+            // Use Array.Copy to quickly copy the contents from this array to the new list's inner array.
+            Array.Copy(_collection, startIndex, newArrayList._collection, 0, count);
+
+            // Assign count to the new list's inner _size counter.
+            newArrayList._size = count;
+
+            return newArrayList;
+        }
+
+
+        /// <summary>
+        /// Return an array version of this list.
+        /// </summary>
+        /// <returns>Array.</returns>
+        public T[] ToArray()
+        {
+            T[] newArray = new T[Count];
+
+            if (Count > 0)
+            {
+                Array.Copy(_collection, 0, newArray, 0, Count);
+            }
+
+            return newArray;
+        }
+
+
+        /// <summary>
+        /// Return an array version of this list.
+        /// </summary>
+        /// <returns>Array.</returns>
+        public List<T> ToList()
+        {
+            var newList = new List<T>(this.Count);
+
+            if (this.Count > 0)
+            {
+                for (int i = 0; i < this.Count; ++i)
+                {
+                    newList.Add(_collection[i]);
+                }
+            }
+
+            return newList;
+        }
+
+
+        /// <summary>
+        /// Return a human readable, multi-line, print-out (string) of this list.
+        /// </summary>
+        /// <returns>The human readable string.</returns>
+        /// <param name="addHeader">If set to <c>true</c> a header with count and Type is added; otherwise, only elements are printed.</param>
+        public string ToHumanReadable(bool addHeader = false)
+        {
+            int i = 0;
+            string listAsString = string.Empty;
+
+            string preLineIndent = (addHeader == false ? "" : "\t");
+
+            for (i = 0; i < Count; ++i)
+            {
+                listAsString = String.Format("{0}{1}[{2}] => {3}\r\n", listAsString, preLineIndent, i, _collection[i]);
+            }
+
+            if (addHeader == true)
+            {
+                listAsString = String.Format("ArrayList of count: {0}.\r\n(\r\n{1})", Count, listAsString);
+            }
+
+            return listAsString;
+        }
+
+
+        /********************************************************************************/
+
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                yield return _collection[i];
+            }
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
     }
 }
 
