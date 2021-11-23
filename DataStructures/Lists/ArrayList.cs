@@ -1,22 +1,19 @@
-﻿
-
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace DataStructures.Lists
 {
     /// <summary>
     /// The Array-Based List Data Structure.
     /// </summary>
-     
     public class ArrayList<T> : IEnumerable<T>
     {
         /// <summary>
         /// Instance variables.
         /// </summary>
 
-        // This sets the default maximum array length to refer to MAXIMUM_ARRAY_LENGTH_xx64
+        // This sets the default maximum array length to refer to MAXIMUM_ARRAY_LENGTH_x64
         // Set the flag IsMaximumCapacityReached to false
         bool DefaultMaxCapacityIsX64 = true;
         bool IsMaximumCapacityReached = false;
@@ -45,6 +42,7 @@ namespace DataStructures.Lists
         /// CONSTRUCTORS
         /// </summary>
         public ArrayList() : this(capacity: 0) { }
+
         public ArrayList(int capacity)
         {
             if (capacity < 0)
@@ -65,6 +63,7 @@ namespace DataStructures.Lists
             _size = 0;
         }
 
+
         /// <summary>
         /// Ensures the capacity.
         /// </summary>
@@ -72,9 +71,8 @@ namespace DataStructures.Lists
         private void _ensureCapacity(int minCapacity)
         {
             // If the length of the inner collection is less than the minCapacity
-            // ... and if the maximum capacity wasn't reached yet,
+            // ... and if the maximum capacity wasn't reached yet, 
             // ... then maximize the inner collection.
-
             if (_collection.Length < minCapacity && IsMaximumCapacityReached == false)
             {
                 int newCapacity = (_collection.Length == 0 ? _defaultCapacity : _collection.Length * 2);
@@ -94,8 +92,8 @@ namespace DataStructures.Lists
 
                 this._resizeCapacity(newCapacity);
             }
-
         }
+
 
         /// <summary>
         /// Resizes the collection to a new maximum number of capacity.
@@ -122,6 +120,7 @@ namespace DataStructures.Lists
             }
         }
 
+
         /// <summary>
         /// Gets the the number of elements in list.
         /// </summary>
@@ -134,6 +133,7 @@ namespace DataStructures.Lists
             }
         }
 
+
         /// <summary>
         /// Returns the capacity of list, which is the total number of slots.
         /// </summary>
@@ -141,6 +141,7 @@ namespace DataStructures.Lists
         {
             get { return _collection.Length; }
         }
+
 
         /// <summary>
         /// Determines whether this list is empty.
@@ -153,6 +154,7 @@ namespace DataStructures.Lists
                 return (Count == 0);
             }
         }
+
 
         /// <summary>
         /// Gets the first element in the list.
@@ -171,6 +173,7 @@ namespace DataStructures.Lists
             }
         }
 
+
         /// <summary>
         /// Gets the last element in the list.
         /// </summary>
@@ -187,6 +190,7 @@ namespace DataStructures.Lists
                 return _collection[Count - 1];
             }
         }
+
 
         /// <summary>
         /// Gets or sets the item at the specified index.
@@ -229,7 +233,6 @@ namespace DataStructures.Lists
                 _ensureCapacity(_size + 1);
             }
 
-
             _collection[_size++] = dataItem;
         }
 
@@ -242,9 +245,11 @@ namespace DataStructures.Lists
         {
             if (elements == null)
                 throw new ArgumentNullException();
+
             // make sure the size won't overflow by adding the range
             if (((uint)_size + elements.Count()) > MAXIMUM_ARRAY_LENGTH_x64)
                 throw new OverflowException();
+
             // grow the internal collection once to avoid doing multiple redundant grows
             if (elements.Any())
             {
@@ -254,6 +259,7 @@ namespace DataStructures.Lists
                     this.Add(element);
             }
         }
+
 
         /// <summary>
         /// Adds an element to list repeatedly for a specified count.
@@ -289,7 +295,7 @@ namespace DataStructures.Lists
                 throw new IndexOutOfRangeException("Please provide a valid index.");
             }
 
-            // If the inner array is full and there are no extra spaces,
+            // If the inner array is full and there are no extra spaces, 
             // ... then maximize it's capacity to a minimum of _size + 1.
             if (_size == _collection.Length)
             {
@@ -297,8 +303,8 @@ namespace DataStructures.Lists
             }
 
             // If the index is not "at the end", then copy the elements of the array
-            // ... between the specified index and the last index to the new range (index +1, _size);
-            // The call at "index" will become available.
+            // ... between the specified index and the last index to the new range (index + 1, _size);
+            // The cell at "index" will become available.
             if (index < _size)
             {
                 Array.Copy(_collection, index, _collection, index + 1, (_size - index));
@@ -342,7 +348,7 @@ namespace DataStructures.Lists
                 throw new IndexOutOfRangeException("Please pass a valid index.");
             }
 
-            // Decrease the size by 1, to avoid doing Array. Copy if the element is to be removed from the tail of list.
+            // Decrease the size by 1, to avoid doing Array.Copy if the element is to be removed from the tail of list. 
             _size--;
 
             // If the index is still less than size, perform an Array.Copy to override the cell at index.
@@ -370,6 +376,7 @@ namespace DataStructures.Lists
             }
         }
 
+
         /// <summary>
         /// Resize the List to a new size.
         /// </summary>
@@ -377,6 +384,7 @@ namespace DataStructures.Lists
         {
             Resize(newSize, default(T));
         }
+
 
         /// <summary>
         /// Resize the list to a new size.
@@ -400,6 +408,7 @@ namespace DataStructures.Lists
             }
         }
 
+
         /// <summary>
         /// Reverses this list.
         /// </summary>
@@ -407,6 +416,7 @@ namespace DataStructures.Lists
         {
             Reverse(0, _size);
         }
+
 
         /// <summary>
         /// Reverses the order of a number of elements. Starting a specific index.
@@ -428,10 +438,11 @@ namespace DataStructures.Lists
             }
 
             // Use Array.Reverse
-            // Running complexity is better than O(N). But unknow.
+            // Running complexity is better than O(N). But unknown.
             // Array.Reverse uses the closed-source function TrySZReverse.
             Array.Reverse(_collection, startIndex, count);
         }
+
 
         /// <summary>
         /// For each element in list, apply the specified action to it.
@@ -450,6 +461,7 @@ namespace DataStructures.Lists
                 action(_collection[i]);
             }
         }
+
 
         /// <summary>
         /// Checks whether the list contains the specified dataItem.
@@ -481,14 +493,15 @@ namespace DataStructures.Lists
             return false;
         }
 
+
         /// <summary>
         /// Checks whether the list contains the specified dataItem.
         /// </summary>
         /// <returns>True if list contains the dataItem, false otherwise.</returns>
         /// <param name="dataItem">Data item.</param>
         /// <param name="comparer">The Equality Comparer object.</param>
-       public bool Contains(T dataItem, IEqualityComparer<T> comparer)
-       {
+        public bool Contains(T dataItem, IEqualityComparer<T> comparer)
+        {
             // Null comparers are not allowed.
             if (comparer == null)
             {
@@ -498,7 +511,7 @@ namespace DataStructures.Lists
             // Null-value check
             if ((Object)dataItem == null)
             {
-                for (int i=0; i < _size; ++i)
+                for (int i = 0; i < _size; ++i)
                 {
                     if ((Object)_collection[i] == null) return true;
                 }
@@ -512,7 +525,8 @@ namespace DataStructures.Lists
             }
 
             return false;
-       }
+        }
+
 
         /// <summary>
         /// Checks whether an item specified via a Predicate<T> function exists exists in list.
@@ -525,6 +539,7 @@ namespace DataStructures.Lists
             return (FindIndex(searchMatch) != -1);
         }
 
+
         /// <summary>
         /// Finds the index of the element that matches the predicate.
         /// </summary>
@@ -534,6 +549,7 @@ namespace DataStructures.Lists
         {
             return FindIndex(0, _size, searchMatch);
         }
+
 
         /// <summary>
         /// Finds the index of the element that matches the predicate.
@@ -545,6 +561,7 @@ namespace DataStructures.Lists
         {
             return FindIndex(startIndex, (_size - startIndex), searchMatch);
         }
+
 
         /// <summary>
         /// Finds the index of the first element that matches the given predicate function.
@@ -584,6 +601,7 @@ namespace DataStructures.Lists
             return -1;
         }
 
+
         /// <summary>
         /// Returns the index of a given dataItem.
         /// </summary>
@@ -593,6 +611,7 @@ namespace DataStructures.Lists
         {
             return IndexOf(dataItem, 0, _size);
         }
+
 
         /// <summary>
         /// Returns the index of a given dataItem.
@@ -604,6 +623,7 @@ namespace DataStructures.Lists
         {
             return IndexOf(dataItem, startIndex, _size);
         }
+
 
         /// <summary>
         /// Returns the index of a given dataItem.
@@ -800,18 +820,7 @@ namespace DataStructures.Lists
         {
             return this.GetEnumerator();
         }
-    }
-}
 
-/*
- The array (or vector). It offers great speed O(1) accessing any element from the array with very low space overhead and you can also iterate backward and forwards from the current element.
-But the main problem is the array is fixed size, you have to know how many elements you will need when you create the data structure.
-The list (double linked list). It offers a dynamically sized data structure (you don't have to know the number of elements at creation) with access to the previous and the new element at a fast speed.
-But accessing any element is very slow O(n) and it has a slightly higher space overhead then the array.
-The array-list (array based list). Like an array, it offers great speed O(1) access to any element and has very low space overhead. Like a list, 
-you don't need to know how many elements will be in the data structure when you create it. 
-But behind the scenes (the user doesn't realize) it is essentially an array which detects when the array will be "full" then it creates a new array (roughly twice the original size) 
-and copies the elements from the old array to the new array.
-Hash table is very different from the three data structures above. It doesn't allow access to the elements in the order by which they were inserted. 
-Instead, it allows you to map a key to a value; so you have very fast access O(1) to the elements using a unique key.
- */
+    }
+
+}

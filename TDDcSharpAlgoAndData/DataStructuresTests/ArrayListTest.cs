@@ -1,9 +1,8 @@
 ﻿using DataStructures.Lists;
 using Xunit;
 
-namespace TDDcSharpAlgoAndData.DataStructuresTests
+namespace UnitTest.DataStructuresTests
 {
-    // https://github.com/aalhour/C-Sharp-Algorithms
     public static class ArrayListTest
     {
         [Fact]
@@ -33,7 +32,7 @@ namespace TDDcSharpAlgoAndData.DataStructuresTests
             long nineHundK = arrayList.Find(item => item == 900000);
 
             var indexIfNineHundK = arrayList.FindIndex(item => item == nineHundK);
-            Assert.True(indexIfNineHundK != -1, "Wrong Index!");
+            Assert.True(indexIfNineHundK != -1, "Wrong index!");
 
             index = 900000;
             arrayList.InsertAt(99999, index);
@@ -51,7 +50,7 @@ namespace TDDcSharpAlgoAndData.DataStructuresTests
             bool doesEightsExists = arrayList.Contains(88888);
             Assert.True(doesEightsExists, "Wrong result!");
 
-            //arrayList.Reverse();
+            //arrayList.Reverse ();
 
             var arrayList2 = new ArrayList<int>();
             arrayList2.Add(0);
@@ -68,10 +67,12 @@ namespace TDDcSharpAlgoAndData.DataStructuresTests
 
             // Console.WriteLine(arrayList2.ToHumanReadable(addHeader: true));
 
-            // var arrayList3 = arrayList.GetRange(0,100);
-            // Console.WriteLine(arrayList3.ToHumanReadable(addHeader: true));
+            //var arrayList3 = arrayList.GetRange(0, 100);
+            //Console.WriteLine(arrayList3.ToHumanReadable(addHeader: true));
+
 
             /****************************************************************/
+
 
             arrayList = new ArrayList<long>();
             arrayList.AddRepeatedly(11, 32);
