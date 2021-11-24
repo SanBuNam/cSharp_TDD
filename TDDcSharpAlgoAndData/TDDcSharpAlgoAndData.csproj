@@ -17,4 +17,10 @@
 	<Folder Include="AlgorithmsTests\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Algorithms\Algorithms.csproj" />
+    <ProjectReference Include="..\cSharpConcepts\cSharpConcepts.csproj" />
+    <ProjectReference Include="..\DataStructures\DataStructures.csproj" />
+  </ItemGroup>
+
 </Project>
