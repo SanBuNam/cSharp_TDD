@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/HHqh1ywuqdgWBJ8vBKhl49EugHyfButgmfapVZBsU3g36wXfibo2XO1atxOXZBV97TC+YP5jrKpENN2T5/tNA==",
+  "dgSpecHash": "EapfYOJBArlT8h7YiYegho1NkOGJebY9fy84aueX+NdJp38EEfg6EpiIy5EoVr781WIO/tQmsWzHPKlqG00avg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\stoic\\Documents\\gitProjects\\cSharp_TDD\\Algorithms\\Algorithms.csproj",
+  "projectFilePath": "C:\\Users\\david.lee\\Documents\\github\\cSharp_TDD\\Algorithms\\Algorithms.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
