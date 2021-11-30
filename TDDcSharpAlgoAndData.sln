@@ -13,6 +13,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructures", "DataStructures\DataStructures.csproj", "{43EB3FED-B283-411E-9FFE-13E610F7891A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cSharpConcepts", "cSharpConcepts\cSharpConcepts.csproj", "{255D08A5-CC6A-4A44-BDA2-0F4DBC5216D0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3247C454-673F-4E18-8006-3DF68081EC79} = {3247C454-673F-4E18-8006-3DF68081EC79}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
