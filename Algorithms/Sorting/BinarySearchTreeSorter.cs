@@ -54,10 +54,26 @@ namespace Algorithms.Sorting
             // Reference handle to root again.
             collection.Clear();
             var treeRootReference = treeRoot;
-            _inOrderTravelAndAdd(treeRootReference, ref colloection);
+            _inOrderTravelAndAdd(treeRootReference, ref collection);
+
             treeRootReference = treeRoot = null;
         }
 
+        /// <summary>
+        /// Used to travel a node's subtrees and add the elements to the collection.
+        /// </summary>
+        /// <typeparam name="T">Type of tree elements.</typeparam>
+        /// <param name="currentNode">Node to start from.</param>
+        /// <param name="collection">Collection to add elements to.</param>
+        private static void _inOrderTravelAndAdd<T>(Node<T> currentNode, ref List<T> collection) where T : IComparable<T>
+        {
+            if (currentNode == null)
+                return;
+
+            _inOrderTravelAndAdd<T>(currentNode.Left, ref collection);
+            collection.Add(currentNode.Value);
+            _inOrderTravelAndAdd<T>(currentNode.Right, ref collection);
+        }
 
         /// <summary>
         /// Minimal BST Node class, used only for unbalanced binary search tree sort.
