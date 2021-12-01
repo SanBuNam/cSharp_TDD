@@ -10,13 +10,11 @@ namespace Algorithms.Common
         /// </summary>
         public static void Swap<T>(this IList<T> list, int firstIndex, int secondIndex)
         {
-            if (list.Count < 2 || firstIndex == secondIndex) //This check is not required but Partition function may make many calls so its for perf reason
+            if (list.Count < 2 || firstIndex == secondIndex)   //This check is not required but Partition function may make many calls so its for perf reason
                 return;
 
             var temp = list[firstIndex];
-
             list[firstIndex] = list[secondIndex];
-
             list[secondIndex] = temp;
         }
 
@@ -25,7 +23,7 @@ namespace Algorithms.Common
         /// </summary>
         public static void Swap<T>(this ArrayList<T> list, int firstIndex, int secondIndex)
         {
-            if (list.Count < 2 || firstIndex == secondIndex)
+            if (list.Count < 2 || firstIndex == secondIndex)   //This check is not required but Partition function may make many calls so its for perf reason
                 return;
 
             var temp = list[firstIndex];
@@ -48,3 +46,4 @@ namespace Algorithms.Common
         }
     }
 }
+

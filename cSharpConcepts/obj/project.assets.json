@@ -1,48 +1,11 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
-      "Algorithms/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "DataStructures": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Algorithms.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Algorithms.dll": {}
-        }
-      },
-      "DataStructures/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/DataStructures.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DataStructures.dll": {}
-        }
-      }
-    }
+    ".NETCoreApp,Version=v3.1": {}
   },
-  "libraries": {
-    "Algorithms/1.0.0": {
-      "type": "project",
-      "path": "../Algorithms/Algorithms.csproj",
-      "msbuildProject": "../Algorithms/Algorithms.csproj"
-    },
-    "DataStructures/1.0.0": {
-      "type": "project",
-      "path": "../DataStructures/DataStructures.csproj",
-      "msbuildProject": "../DataStructures/DataStructures.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
-      "Algorithms >= 1.0.0"
-    ]
+    ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
     "C:\\Users\\david.lee\\.nuget\\packages\\": {},
@@ -79,11 +42,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {
-            "C:\\Users\\david.lee\\Documents\\github\\cSharp_TDD\\Algorithms\\Algorithms.csproj": {
-              "projectPath": "C:\\Users\\david.lee\\Documents\\github\\cSharp_TDD\\Algorithms\\Algorithms.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
