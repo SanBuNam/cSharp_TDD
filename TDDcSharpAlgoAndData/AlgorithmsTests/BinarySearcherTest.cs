@@ -47,12 +47,12 @@ namespace UnitTest.AlgorithmsTests
         [Fact]
         public static void MoveNextTest()
         {
-            IList<int> items = new List<int> {3, 5, 2, 6, 1, 4};
+            IList<int> items = new List<int> { 3, 5, 2, 6, 1, 4 };
             BinarySearcher<int> searcher = new BinarySearcher<int>(items, Comparer<int>.Default);
             searcher.BinarySearch(1);
             //reset indices to test MoveNext()
             searcher.Reset();
-            IList<int> leftEnumeratedValues = new List<int> {3, 2, 1};
+            IList<int> leftEnumeratedValues = new List<int> { 3, 2, 1 };
             int i = 0;
             while (searcher.MoveNext())
             {
@@ -62,7 +62,7 @@ namespace UnitTest.AlgorithmsTests
             searcher.BinarySearch(6);
             //reset indices to test MoveNext()
             searcher.Reset();
-            IList<int> rightEnumeratedValues = new List<int> {3, 5, 6};
+            IList<int> rightEnumeratedValues = new List<int> { 3, 5, 6 };
             i = 0;
             while (searcher.MoveNext())
             {

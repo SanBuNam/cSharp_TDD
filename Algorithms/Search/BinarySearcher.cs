@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Algorithms.Sorting;
 
-
 namespace Algorithms.Search
 {
     public class BinarySearcher<T> : IEnumerator<T>
@@ -94,6 +93,7 @@ namespace Algorithms.Search
             }
             return true;
         }
+
         public void Reset()
         {
             this._currentItemIndex = -1;
@@ -103,7 +103,7 @@ namespace Algorithms.Search
 
         public void Dispose()
         {
-            // not implementing this, since there are no managed resources to release
+            //not implementing this, since there are no managed resources to release 
         }
     }
 }

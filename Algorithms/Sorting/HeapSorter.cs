@@ -54,7 +54,9 @@ namespace Algorithms.Sorting
             }
         }
 
+
         /****************************************************************************/
+
 
         /// <summary>
         /// Private Max-Heap Builder.
@@ -66,7 +68,7 @@ namespace Algorithms.Sorting
 
             for (int node = lastNodeWithChildren; node >= 0; --node)
             {
-                collection.BuildMaxHeap(node, lastIndex, comparer);
+                collection.MaxHeapify(node, lastIndex, comparer);
             }
         }
 
@@ -84,7 +86,7 @@ namespace Algorithms.Sorting
             // If collection[left] > collection[nodeIndex]
             if (left <= lastIndex && comparer.Compare(collection[left], collection[nodeIndex]) > 0)
                 largest = left;
-            
+
             // If collection[right] > collection[largest]
             if (right <= lastIndex && comparer.Compare(collection[right], collection[largest]) > 0)
                 largest = right;
@@ -125,6 +127,7 @@ namespace Algorithms.Sorting
             // If collection[left] > collection[nodeIndex]
             if (left <= lastIndex && comparer.Compare(collection[left], collection[nodeIndex]) < 0)
                 smallest = left;
+
             // If collection[right] > collection[largest]
             if (right <= lastIndex && comparer.Compare(collection[right], collection[smallest]) < 0)
                 smallest = right;

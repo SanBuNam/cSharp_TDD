@@ -10,7 +10,6 @@ namespace Algorithms.Common
         /// <returns><c>true</c> if the value is a number; otherwise, <c>false</c>.</returns>
         /// <param name="value">Value.</param>
         /// <typeparam name="T">The Type of value.</typeparam>
-
         public static bool IsNumber<T>(this T value)
         {
             if (value is sbyte) return true;
@@ -27,6 +26,7 @@ namespace Algorithms.Common
             return false;
         }
 
+
         /// <summary>
         /// Determines if firstValue is equals to the specified secondValue.
         /// </summary>
@@ -39,6 +39,7 @@ namespace Algorithms.Common
             return firstValue.Equals(secondValue);
         }
 
+
         /// <summary>
         /// Determines if thisValue is greater than the specified otherValue.
         /// </summary>
@@ -50,6 +51,7 @@ namespace Algorithms.Common
         {
             return firstValue.CompareTo(secondValue) > 0;
         }
+
 
         /// <summary>
         /// Determines if thisValue is less than the specified otherValue.
