@@ -1,0 +1,13 @@
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\bin\Debug\netcoreapp3.1\Algorithms.deps.json
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\bin\Debug\netcoreapp3.1\Algorithms.dll
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\bin\Debug\netcoreapp3.1\Algorithms.pdb
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\bin\Debug\netcoreapp3.1\DataStructures.dll
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\bin\Debug\netcoreapp3.1\DataStructures.pdb
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.csproj.AssemblyReference.cache
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.AssemblyInfoInputs.cache
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.AssemblyInfo.cs
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.csproj.CoreCompileInputs.cache
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.csproj.CopyComplete
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.dll
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.pdb

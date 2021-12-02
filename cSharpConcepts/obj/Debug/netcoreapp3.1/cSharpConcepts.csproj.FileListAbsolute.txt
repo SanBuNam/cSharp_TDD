@@ -1,0 +1,10 @@
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\bin\Debug\netcoreapp3.1\cSharpConcepts.deps.json
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\bin\Debug\netcoreapp3.1\cSharpConcepts.dll
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\bin\Debug\netcoreapp3.1\cSharpConcepts.pdb
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.csproj.AssemblyReference.cache
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.AssemblyInfoInputs.cache
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.AssemblyInfo.cs
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.csproj.CoreCompileInputs.cache
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.dll
+C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.pdb

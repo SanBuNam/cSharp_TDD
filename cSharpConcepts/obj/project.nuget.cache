@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Li9o0TTt8Bl0V/G7FhxVBmDkMfxZh44MG46mE8Ezr7lj67oqHaKwlSGftKs5w037knL06/V51l3zvm1uQQ2nqA==",
+  "dgSpecHash": "T/oMBwgsB/APo2r5RpJe9qPUukcSSUNeH5EVXwPl1y1nTVdBrdhHhGjB+D5RbaB2CdGudvdt7rqQMSVpq7nKWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\david.lee\\Documents\\github\\cSharp_TDD\\cSharpConcepts\\cSharpConcepts.csproj",
+  "projectFilePath": "C:\\Users\\stoic\\Documents\\gitProjects\\cSharp_TDD\\cSharpConcepts\\cSharpConcepts.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

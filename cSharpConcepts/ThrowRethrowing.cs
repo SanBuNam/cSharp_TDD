@@ -59,7 +59,7 @@ namespace cSharpConcepts
             {
                 return Value[0];
             }
-            catch (NullReferenceException e)
+            catch (NullReferenceException)
             {
                 throw;
             }
