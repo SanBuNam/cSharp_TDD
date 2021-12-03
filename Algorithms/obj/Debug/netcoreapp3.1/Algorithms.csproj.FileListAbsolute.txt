@@ -11,3 +11,16 @@ C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3
 C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.csproj.CopyComplete
 C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.dll
 C:\Users\stoic\Documents\gitProjects\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.pdb
+C:\Users\david.lee\Documents\github\cSharp_TDD\Algorithms\bin\Debug\netcoreapp3.1\Algorithms.deps.json
+C:\Users\david.lee\Documents\github\cSharp_TDD\Algorithms\bin\Debug\netcoreapp3.1\Algorithms.dll
+C:\Users\david.lee\Documents\github\cSharp_TDD\Algorithms\bin\Debug\netcoreapp3.1\Algorithms.pdb
+C:\Users\david.lee\Documents\github\cSharp_TDD\Algorithms\bin\Debug\netcoreapp3.1\DataStructures.dll
+C:\Users\david.lee\Documents\github\cSharp_TDD\Algorithms\bin\Debug\netcoreapp3.1\DataStructures.pdb
+C:\Users\david.lee\Documents\github\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.csproj.AssemblyReference.cache
+C:\Users\david.lee\Documents\github\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\david.lee\Documents\github\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.AssemblyInfoInputs.cache
+C:\Users\david.lee\Documents\github\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.AssemblyInfo.cs
+C:\Users\david.lee\Documents\github\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.csproj.CoreCompileInputs.cache
+C:\Users\david.lee\Documents\github\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.csproj.CopyComplete
+C:\Users\david.lee\Documents\github\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.dll
+C:\Users\david.lee\Documents\github\cSharp_TDD\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.pdb

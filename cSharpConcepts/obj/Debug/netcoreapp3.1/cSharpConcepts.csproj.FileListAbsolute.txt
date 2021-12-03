@@ -8,3 +8,13 @@ C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\obj\Debug\netcore
 C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.csproj.CoreCompileInputs.cache
 C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.dll
 C:\Users\stoic\Documents\gitProjects\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.pdb
+C:\Users\david.lee\Documents\github\cSharp_TDD\cSharpConcepts\bin\Debug\netcoreapp3.1\cSharpConcepts.deps.json
+C:\Users\david.lee\Documents\github\cSharp_TDD\cSharpConcepts\bin\Debug\netcoreapp3.1\cSharpConcepts.dll
+C:\Users\david.lee\Documents\github\cSharp_TDD\cSharpConcepts\bin\Debug\netcoreapp3.1\cSharpConcepts.pdb
+C:\Users\david.lee\Documents\github\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.csproj.AssemblyReference.cache
+C:\Users\david.lee\Documents\github\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\david.lee\Documents\github\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.AssemblyInfoInputs.cache
+C:\Users\david.lee\Documents\github\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.AssemblyInfo.cs
+C:\Users\david.lee\Documents\github\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.csproj.CoreCompileInputs.cache
+C:\Users\david.lee\Documents\github\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.dll
+C:\Users\david.lee\Documents\github\cSharp_TDD\cSharpConcepts\obj\Debug\netcoreapp3.1\cSharpConcepts.pdb
