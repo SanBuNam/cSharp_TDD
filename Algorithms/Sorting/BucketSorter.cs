@@ -17,7 +17,7 @@ namespace Algorithms.Sorting
         /// <summary>
         /// Public API: Sorts ascending
         /// </summary>
-        public static void BucketSortingAscending(this IList<int> collection)
+        public static void BucketSortAscending(this IList<int> collection)
         {
             int maxValue = collection.Max();
             int minValue = collection.Min();
