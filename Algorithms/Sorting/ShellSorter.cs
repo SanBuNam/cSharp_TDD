@@ -25,8 +25,11 @@ namespace Algorithms.Sorting
                 d = (d + 1) / 2;
                 for (int i = 0; i < (collection.Count - d); i++)
                 {
-                    collection.Swap(i + d, i);
-                    flag = true;
+                    if (comparer.Compare(collection[i + d], collection[i]) < 0)
+                    {
+                        collection.Swap(i + d, i);
+                        flag = true;
+                    }
                 }
             }
         }
