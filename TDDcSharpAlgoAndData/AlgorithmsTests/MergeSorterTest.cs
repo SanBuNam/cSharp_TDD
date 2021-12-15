@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Algorithms.Sorting;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using Xunit;
 
 namespace TDDcSharpAlgoAndData.AlgorithmsTests
