@@ -54,6 +54,7 @@ namespace Algorithms.Sorting
             }
 
             collection.Swap(wallIndex, pivotIndex);
+
             return wallIndex;
         }
     }
