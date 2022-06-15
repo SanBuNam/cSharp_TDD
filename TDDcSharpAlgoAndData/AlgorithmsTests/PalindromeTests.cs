@@ -5,33 +5,26 @@ namespace UnitTest.AlgorithmsTests
 {
     public static class PalindromeTests
     {
-        public static void TextIsPalindrome_TrueExpected()
+        [Theory]
+        [InlineData("Anna")]
+        [InlineData("A Santa at Nasa")]
+        public static void TextIsPalindrome_TrueExpected(string word)
         {
-            string test1 = "Anna";
-            string test2 = "A Santa at Nasa";
-
             // Arrange
-            // Act
-            var isPalindrome = Palindrome.IsStringPalindrome(test1);
-            var isPalindrome2 = Palindrome.IsStringPalindrome(test2);
+            var isPalindrome = Palindrome.IsStringPalindrome(word);
             // Assert
             Assert.True(isPalindrome);
-            Assert.True(isPalindrome2);
         }
 
-
-        public static void TextNotPalindrome_FalseExpected()
+        [Theory]
+        [InlineData("hallo")]
+        [InlineData("Once upon a time")]
+        public static void TextNotPalindrome_FalseExpected(string word)
         {
-            string test1 = "hallo";
-            string test2 = "Once upon a time";
-
             // Arrange
-            // Act
-            var isPalindrome = Palindrome.IsStringPalindrome(test1);
-            var isPalindrome2 = Palindrome.IsStringPalindrome(test2);
+            var isPalindrome = Palindrome.IsStringPalindrome(word);
             // Assert
             Assert.False(isPalindrome);
-            Assert.False(isPalindrome2);
         }
     }
 }
