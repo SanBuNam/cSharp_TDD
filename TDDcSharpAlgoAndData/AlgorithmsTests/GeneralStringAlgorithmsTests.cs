@@ -9,7 +9,6 @@ namespace TDDcSharpAlgoAndData.AlgorithmsTests
         [Theory]
         [InlineData("Griffith", 'f', 2)]
         [InlineData("Randomwoooord", 'o', 4)]
-        [InlineData("Control", 'c', 1)]
         public static void MaxCountCharIsObtained(string text, char expectedSymbol, int expectedCount)
         {
             var (symbol, count) = GeneralStringAlgorithms.FindLongestConsecutiveCharacters(text);
