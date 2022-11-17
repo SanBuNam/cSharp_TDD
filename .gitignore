@@ -363,4 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # cache files
-.cache
+*.cache
+
+.Debug/
