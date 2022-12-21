@@ -27,7 +27,8 @@ namespace cSharpConcepts
             return "Dummy Customer Name"; // get it from DB in real app
         }
     }
-    // Dependency Injection(DI) is a design pattern used to implement IoC.It allows the creation of dependent objects outside of a class and provides those objects to a class through different ways.Using DI, we move the creation and binding of the dependent objects outside of the class that depends on them.
+    // Dependency Injection(DI) is a design pattern used to implement IoC.It allows the creation of dependent objects outside of a class and provides those objects to a class through different ways.
+    // Using DI, we move the creation and binding of the dependent objects outside of the class that depends on them.
 
     // 
     // DIP
@@ -64,7 +65,10 @@ namespace cSharpConcepts
             return _custDataAccess.GetCustomerName(id);
         }
     }
-    // The problem with the above example is that we used DataAccessFactory inside the CustomerBusinessLogic class. So, suppose there is another implementation of ICustomerDataAccess and we want to use that new class inside CustomerBusinessLogic. Then, we need to change the source code of the CustomerBusinessLogic class as well. The Dependency injection pattern solves this problem by injecting dependent objects via a constructor, a property, or an interface.
+    // The problem with the above example is that we used DataAccessFactory inside the CustomerBusinessLogic class.
+    // So, suppose there is another implementation of ICustomerDataAccess and we want to use that new class inside CustomerBusinessLogic.
+    // Then, we need to change the source code of the CustomerBusinessLogic class as well.
+    // The Dependency injection pattern solves this problem by injecting dependent objects via a constructor, a property, or an interface.
 
     //
     // eq. Constructor Injection
@@ -110,7 +114,10 @@ namespace cSharpConcepts
             return _customerBL.ProcessCustomerData(id);
         }
     }
-    // As you can see in the above example, the CustomerService class creates and injects the CustomerDataAccess object into the CustomerBusinessLogic class. Thus, the CustomerBusinessLogic class doesn't need to create an object of CustomerDataAccess using the new keyword or using factory class. The calling class (CustomerService) creates and sets the appropriate DataAccess class to the CustomerBusinessLogic class. In this way, the CustomerBusinessLogic and CustomerDataAccess classes become "more" loosely coupled classes.
+    // As you can see in the above example, the CustomerService class creates and injects the CustomerDataAccess object into the CustomerBusinessLogic class.
+    // Thus, the CustomerBusinessLogic class doesn't need to create an object of CustomerDataAccess using the new keyword or using factory class.
+    // The calling class (CustomerService) creates and sets the appropriate DataAccess class to the CustomerBusinessLogic class.
+    // In this way, the CustomerBusinessLogic and CustomerDataAccess classes become "more" loosely coupled classes.
 
     //
     // Property Injection
