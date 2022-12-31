@@ -6,16 +6,10 @@ namespace Algorithms.Strings
 {
     public class KnuthMorrisPrattSearcher
     {
-        /// <summary>
-        ///     An implementation of Knuth-Morris-Pratt Algorithm.
-        ///     Worst case tim complexity: 0(n + k)
-        ///     where n - text length, k - pattern length
+
         /// </summary>
         /// <param name="str">The string to look in.</param>
         /// <param name="pat">The pattern to look for.</param>
-        /// <returns>
-        ///     The zero-based positions of all occurences of <paramref name="pat" /> in <paramref name="str" />.
-        /// </returns>
         public IEnumerable<int> FindIndexes(string str, string pat)
         {
             var lps = FindLongestPrefixSuffixValues(pat);
@@ -48,9 +42,6 @@ namespace Algorithms.Strings
                 }
             }
         }
-
-        /// <summary>
-        ///     Return the longest prefix suffix values for pattern
         /// </summary>
         /// <param name="pat">pattern to seek.</param>
         /// <returns>The longest prefix suffix values for <paramref name="pat" />.</returns>
@@ -77,7 +68,6 @@ namespace Algorithms.Strings
                     i++;
                 }
             }
-
             return lps;
         }
     }
