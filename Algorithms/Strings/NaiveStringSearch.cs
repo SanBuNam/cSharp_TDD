@@ -1,13 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-
-namespace Algorithms.Strings
-{
-    /// <summary>
-    ///     Implements the traditional naive string matching algorithm in c#
-    /// </summary>
     public static class NaiveStringSearch
     {
         /// <summary>
