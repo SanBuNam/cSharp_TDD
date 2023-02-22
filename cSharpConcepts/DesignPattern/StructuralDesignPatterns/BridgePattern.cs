@@ -5,6 +5,8 @@ using System.Text;
 namespace cSharpConcepts.DesignPattern.StructuralDesignPatterns
 {
     // Bridge is a structural design pattern that devides business logic or huge class into separate class hierarchies that can be developed independently.
+    // Lets you split a large class or a set of closely related classes into two separate hierarchies - abstraction and implementation - which can be developed independently of each other.
+
     /*
     One of these hierarchies (often called the Abstraction) will get a reference to an object of the second hierarchy (implementation).
     The abstraction will be able to delegate some (sometimes, most) of its calls to the implementations object.
@@ -43,6 +45,7 @@ namespace cSharpConcepts.DesignPattern.StructuralDesignPatterns
                 base._implementation.OperationImplementation();
         }
     }
+
     /*
      The Implementation defines the interface for all implementation classes.
      It doesn't have to match the Abstraction's interface. In fact, the two interfaces can entirely different.

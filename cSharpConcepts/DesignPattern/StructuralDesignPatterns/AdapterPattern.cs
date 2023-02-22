@@ -5,11 +5,10 @@ using System.Text;
 namespace cSharpConcepts.DesignPattern.StructuralDesignPatterns
 {
     // Structural design patterns explain how to assemble objects and classes into larger structures, while keeping these structures flexible and efficient.
-    /*
-    Adapter is a structural design pattern, which allows incompatible objects to collaborate.
-    The Adapter acts as a wrapper between two objects. 
-    It catches calls for one object and transforms them to format and interface recongnizable by the second object.
-     */
+    // Adapter structual design pattern allows objects with incompatible interfaces to collaborate.
+    // Adapter is a structural design pattern, which allows incompatible objects to collaborate.
+    // The Adapter acts as a wrapper between two objects. It catches calls for one object and transforms them to format and interface recongnizable by the second object.
+
     // The target defines the domain-specific interface used by the client code.
     public interface ITarget
     {
