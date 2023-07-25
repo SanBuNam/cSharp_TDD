@@ -103,4 +103,49 @@ namespace cSharpConcepts.DesignPattern.StructuralDesignPatterns
         }
     }
 
+
+    // 07.25.23 Simpler Bridge
+    /*
+     Bridge design pattern decouples implementation from an abstraction. 
+    Useful in versioning when a new software replaces the old but both should run together for the existing codebase.
+     */
+    class Abstraction
+    {
+        Bridge _bridge;
+        public Abstraction(Bridge bridge)
+        {
+            _bridge = bridge;
+        }
+
+        public string Execute()
+        {
+            _bridge.ExecuteSomeFunction();
+        }
+    }
+
+    interface IBridge
+    {
+        void ExecuteSomeFunction();
+    }
+
+    class Version1: IBridge
+    {
+        public void ExecuteSomeFunction()
+        {
+        }
+    }
+
+    class Version2: IBridge
+    {
+        public void ExecuteSomeFunction()
+        {
+        }
+    }
+
+    static void Main()
+    {
+        (new Abstraction(new Version1())).Execute();
+        (new Abstraction(new Version2())).Execute();
+    }
+
 }
